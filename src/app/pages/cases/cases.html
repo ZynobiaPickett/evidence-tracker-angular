@@ -1,0 +1,26 @@
+<div style="font-family: Arial; max-width: 900px; margin: 40px auto;">
+  <h1>Evidence Tracker</h1>
+
+  <h2>Add Case</h2>
+  <div style="border:1px solid #ddd; padding:15px; margin-bottom:20px;">
+    <input [(ngModel)]="newCase.title" placeholder="Title" style="display:block; margin-bottom:10px; width:100%;" />
+    <input [(ngModel)]="newCase.description" placeholder="Description" style="display:block; margin-bottom:10px; width:100%;" />
+    
+    <select [(ngModel)]="newCase.status" style="margin-bottom:10px;">
+      <option>OPEN</option>
+      <option>UNDER REVIEW</option>
+      <option>CLOSED</option>
+    </select>
+    <button (click)="addCase()">Add Case</button>
+  </div>
+
+  <h2>Cases</h2>
+
+  <input [(ngModel)]="searchTerm" placeholder="Search cases..." style="display:block; margin-bottom:15px; padding:8px; width:100%;" />
+
+<div *ngFor="let caseItem of filteredCases" style="border:1px solid #ddd; border-radius:8px; padding:16px; margin:16px 0;">
+  <h3>{{ caseItem.title }}</h3>
+  <p>{{ caseItem.description }}</p>
+  <p><strong>Status:</strong> {{ caseItem.status }}</p>
+  <p><strong>Created:</strong> {{ caseItem.createdDate }}</p>
+<button *ngIf="caseItem.id" type="button" (click)="deleteCase(caseItem.id)">Delete</button></div>

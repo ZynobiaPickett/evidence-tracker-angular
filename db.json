@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "id": "1",
+      "title": "Fraud Investigation - DC",
+      "description": "Financial fraud investigation involving suspicious account activity.",
+      "status": "OPEN",
+      "createdDate": "2026-04-28"
+    },
+    {
+      "id": "2",
+      "title": "Digital Evidence Review",
+      "description": "Review of collected device metadata and document records.",
+      "status": "UNDER REVIEW",
+      "createdDate": "2026-04-29"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "1",
+      "caseId": 1,
+      "type": "Document",
+      "description": "Bank statement PDF",
+      "collectedBy": "Analyst A",
+      "collectedDate": "2026-04-28"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
