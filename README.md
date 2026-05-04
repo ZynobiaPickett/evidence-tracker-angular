@@ -1,59 +1,46 @@
-# Frontend
+# Evidence Tracker App
+A full-stack-style Angular application for tracking case records using CRUD operations and a simulated REST API.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+## Features
+- View cases
+- Add new cases
+- Delete cases
+- Search/filter cases
+- Connect Angular frontend to a mock REST API
 
-## Development server
+## Tech Stack
+- Angular
+- TypeScript
+- HTML/CSS
+- json-server
+- db.json mock database
 
-To start a local development server, run:
+## Architecture
+```Angular Component → Angular Service → REST API → json-server → db.json```
 
-```bash
+## API Endpoints
+GET    /cases
+POST   /cases
+DELETE /cases/:id
+
+## How to Run
+Install dependencies: npm install
+
+## Start the mock backend
+npx json-server --watch db.json --port 3001
+
+## Start the Angular app:
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Open:
+http://localhost:4200
 
-## Code scaffolding
+## Notes:
+This project uses json-server and db.json to simulate backend API behavior. In a production environment, the mock backend could be replaced with a Java Spring Boot API connected to PostgreSQL.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Future Improvements:
+Add update/edit functionality
+Add authentication
+Add form validation
+Connect to PostgreSQL
+Add CI/CD pipeline
